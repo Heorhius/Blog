@@ -1,6 +1,5 @@
-package com.kaptsiug.blog.entity;
+package com.kaptsiug.blog.entity.sql;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;

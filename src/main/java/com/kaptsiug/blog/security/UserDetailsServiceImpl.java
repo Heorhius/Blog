@@ -1,15 +1,14 @@
 package com.kaptsiug.blog.security;
 
-import com.kaptsiug.blog.entity.UserEntity;
-import com.kaptsiug.blog.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
+import com.kaptsiug.blog.entity.sql.UserEntity;
+import com.kaptsiug.blog.repository.sql.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserRepository userRepository;

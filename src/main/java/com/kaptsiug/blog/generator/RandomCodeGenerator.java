@@ -8,6 +8,6 @@ import java.util.UUID;
 public class RandomCodeGenerator implements Generator<String> {
     @Override
     public String generate(String from) {
-        return String.valueOf(UUID.fromString(from));
+        return String.valueOf(UUID.randomUUID());
     }
 }

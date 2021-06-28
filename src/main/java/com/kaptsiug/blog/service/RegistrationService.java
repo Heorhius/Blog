@@ -2,13 +2,12 @@ package com.kaptsiug.blog.service;
 
 import com.kaptsiug.blog.dto.UserEnter;
 import com.kaptsiug.blog.dto.UserForm;
-import com.kaptsiug.blog.entity.UserEntity;
+import com.kaptsiug.blog.entity.sql.UserEntity;
 import com.kaptsiug.blog.entity.redis.UserInvitation;
 import com.kaptsiug.blog.generator.Generator;
 import com.kaptsiug.blog.mapper.UserInvitationMapper;
-import com.kaptsiug.blog.repository.UserInvitationRepository;
-import com.kaptsiug.blog.repository.UserRepository;
-import com.kaptsiug.blog.security.JwtFilter;
+import com.kaptsiug.blog.repository.redis.UserInvitationRepository;
+import com.kaptsiug.blog.repository.sql.UserRepository;
 import com.kaptsiug.blog.security.JwtProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -33,7 +32,7 @@ public class RegistrationService {
             throw new IllegalArgumentException("User already exists!");
         }
 
-        exist = invitationRepository.existsUserInvitationByEmail(email);
+//        exist = invitationRepository.existsUserInvitationByEmail(email);
         if (exist) {
             throw new IllegalArgumentException("Invitation code already exists!");
         }
@@ -47,7 +46,7 @@ public class RegistrationService {
     }
 
     public String enter(UserEnter userEnter) {
-        boolean exist = invitationRepository.existsUserInvitationByEmail(userEnter.getEmail());
+        boolean exist = invitationRepository.existsByEmail(userEnter.getEmail());
         if (exist) {
             throw new IllegalArgumentException("Link is not confirmed");
         }

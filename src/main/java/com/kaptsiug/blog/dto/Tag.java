@@ -1,6 +1,6 @@
 package com.kaptsiug.blog.dto;
 
-import com.kaptsiug.blog.entity.ArticleEntity;
+import com.kaptsiug.blog.entity.sql.ArticleEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

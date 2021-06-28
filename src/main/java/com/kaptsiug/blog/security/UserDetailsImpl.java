@@ -1,6 +1,6 @@
 package com.kaptsiug.blog.security;
 
-import com.kaptsiug.blog.entity.UserEntity;
+import com.kaptsiug.blog.entity.sql.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

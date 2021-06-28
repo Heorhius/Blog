@@ -9,5 +9,6 @@ import org.mapstruct.Mapping;
 public interface UserInvitationMapper {
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "invitationCode", source = "hashCode")
     UserInvitation toUserInvitation(UserForm source, String hashCode);
 }

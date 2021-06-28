@@ -15,6 +15,8 @@ public class JavaMailConfig {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
+
+        // todo: use real cred
         mailSender.setUsername("my.gmail@gmail.com");
         mailSender.setPassword("password");
 

@@ -1,6 +1,6 @@
-package com.kaptsiug.blog.repository;
+package com.kaptsiug.blog.repository.sql;
 
-import com.kaptsiug.blog.entity.UserEntity;
+import com.kaptsiug.blog.entity.sql.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {

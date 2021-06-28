@@ -1,14 +1,9 @@
-package com.kaptsiug.blog.repository;
+package com.kaptsiug.blog.repository.sql;
 
-import com.kaptsiug.blog.dto.Article;
-import com.kaptsiug.blog.entity.ArticleEntity;
+import com.kaptsiug.blog.entity.sql.ArticleEntity;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 
 public interface ArticleRepository extends JpaRepository<ArticleEntity, Integer> {
 

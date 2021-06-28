@@ -1,10 +1,10 @@
 package com.kaptsiug.blog.service;
 
 import com.kaptsiug.blog.dto.Article;
-import com.kaptsiug.blog.entity.ArticleEntity;
+import com.kaptsiug.blog.entity.sql.ArticleEntity;
 import com.kaptsiug.blog.mapper.ArticleMapper;
-import com.kaptsiug.blog.repository.ArticleRepository;
-import com.kaptsiug.blog.repository.UserRepository;
+import com.kaptsiug.blog.repository.sql.ArticleRepository;
+import com.kaptsiug.blog.repository.sql.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

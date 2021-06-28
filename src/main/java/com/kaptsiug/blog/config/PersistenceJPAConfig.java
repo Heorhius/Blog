@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.kaptsiug.blog.repository")
+@EnableJpaRepositories("com.kaptsiug.blog.repository.sql")
 //@EnableJpaAuditing
 public class PersistenceJPAConfig {
 
@@ -30,7 +30,7 @@ public class PersistenceJPAConfig {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("com.kaptsiug.blog.entity");
+        factory.setPackagesToScan("com.kaptsiug.blog.entity.sql");
         factory.setDataSource(dataSource());
         factory.afterPropertiesSet();
         factory.setJpaProperties(additionalProperties());

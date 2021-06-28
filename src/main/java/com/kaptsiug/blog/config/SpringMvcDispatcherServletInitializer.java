@@ -7,12 +7,12 @@ public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationCon
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{PersistenceJPAConfig.class, RedisConfiguration.class, SecurityConfig.class};
+        return new Class[]{PersistenceJPAConfig.class, RedisConfiguration.class,JavaMailConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{SpringConfig.class, PersistenceJPAConfig.class, RedisConfiguration.class, SecurityConfig.class, JavaMailConfig.class};
+        return new Class[]{SpringConfig.class,  SecurityConfig.class};
     }
 
     @Override

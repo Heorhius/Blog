@@ -1,6 +1,5 @@
-package com.kaptsiug.blog.entity;
+package com.kaptsiug.blog.entity.sql;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.kaptsiug.blog.dto.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;

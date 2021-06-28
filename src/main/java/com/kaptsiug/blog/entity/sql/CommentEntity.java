@@ -1,4 +1,4 @@
-package com.kaptsiug.blog.entity;
+package com.kaptsiug.blog.entity.sql;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,20 +12,18 @@ import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
-public class UserEntity {
-
+@Table(name = "comment")
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "first_name")
-    private String firstName;
-    @Column(name = "last_name")
-    private String lastName;
-    private String password;
-    private String email;
+    private String message;
+    @Column(name = "post_id")
+    private int postId;
+    @Column(name = "author_id")
+    private int authorId;
     @CreatedDate
     @Column(name = "created_at")
-    private Date createdAt;
+    private Date createdDate;
 
 }
