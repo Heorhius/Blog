@@ -4,11 +4,13 @@ import com.kaptsiug.blog.dto.UserForm;
 import com.kaptsiug.blog.entity.redis.UserInvitation;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface UserInvitationMapper {
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "invitationCode", source = "hashCode")
+    UserInvitationMapper INSTANCE = Mappers.getMapper(UserInvitationMapper.class);
+    //@Mapping(target = "id", ignore = true)
+    //@Mapping(target = "invitationCode", source = "hashCode")
     UserInvitation toUserInvitation(UserForm source, String hashCode);
 }

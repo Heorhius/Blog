@@ -5,11 +5,12 @@ import com.kaptsiug.blog.dto.UserForm;
 import com.kaptsiug.blog.service.RegistrationService;
 import com.kaptsiug.blog.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthController {
@@ -17,15 +18,15 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/signup")
-    public ResponseEntity<Void> signUp(@RequestBody UserForm userForm) {
+    @ResponseStatus(HttpStatus.OK)
+    public void signUp(@RequestBody UserForm userForm) {
         registrationService.register(userForm);
-        return ResponseEntity.ok().build();
     }
 
     @GetMapping("confirm/${hash}")
-    public ResponseEntity<Void> confirmInvitation(@RequestParam String hash) {
+    @ResponseStatus(HttpStatus.OK)
+    public void confirmInvitation(@RequestParam String hash) {
         userService.activate(hash);
-        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/signin")

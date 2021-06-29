@@ -1,8 +1,10 @@
 package com.kaptsiug.blog.entity.sql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -15,8 +17,12 @@ public class TagEntity {
     private Integer id;
     private String name;
 
-    @ManyToMany(mappedBy = "tags", fetch = FetchType.LAZY)
-//    @JsonIgnoreProperties("articles")
+    {
+        articles = new HashSet<>();
+    }
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "tags")
     private Set<ArticleEntity> articles;
 
 

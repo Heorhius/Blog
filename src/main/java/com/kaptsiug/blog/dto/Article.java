@@ -4,18 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
+import java.util.Date;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Article {
-
-    private Integer id;
+    @NotEmpty
     private String title;
+    @NotEmpty
     private String text;
+    @NotEmpty
     private Status status;
-    private Integer authorId;
-    private Instant createdDate;
-    private Instant lastModifiedDate;
+    private Date createdDate;
+    private Date lastModifiedDate;
+    private Set<Tag> tags;
 }

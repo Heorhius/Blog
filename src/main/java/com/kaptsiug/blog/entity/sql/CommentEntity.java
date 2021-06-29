@@ -1,5 +1,6 @@
 package com.kaptsiug.blog.entity.sql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,12 +19,22 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String message;
-    @Column(name = "post_id")
-    private int postId;
-    @Column(name = "author_id")
-    private int authorId;
+    //@Column(name = "post_id")
+    //private int postId;
+    //@Column(name = "author_id")
+    //private int authorId;
     @CreatedDate
     @Column(name = "created_at")
     private Date createdDate;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
+    private UserEntity user;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "article_id", nullable = false)
+    private ArticleEntity article;
 
 }

@@ -21,7 +21,7 @@ public class UserService {
             throw new IllegalArgumentException("User invitation not found");
         }
 
-        UserEntity save = userRepository.save(userMapper.toUser(invitation));
+        UserEntity save = userRepository.save(userMapper.toUserEntity(invitation));
 
         // delete from queue
         invitationRepository.delete(invitation);

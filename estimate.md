@@ -17,19 +17,19 @@
     - [x] Creating mappers
     - [x] Creating controllers
     > *Estimated time: 25 hours*    
-      *Factual time: 26 hour* 
+      *Factual time: 27 hour* 
 
 * ## STAGE 3. Spring Security
-    - [ ] Adding Spring Security into the project
-    - [ ] Adding and setting Redis
-    - [ ] Setting security
+    - [x] Adding Spring Security into the project
+    - [x] Adding and setting Redis
+    - [x] Setting security
     > *Estimated time: 10 hours*  
-      *Factual time: 0 hours*
+      *Factual time: 12 hours*
 
 * ## STAGE 4. Mail sending
-    - [ ] Creating mail sending
+    - [x] Creating mail sending
     > *Estimated time: 10 hours*  
-      *Factual time: 0 hours*
+      *Factual time: 6 hours*
 
 * ## STAGE 5. Tests
     - [ ] Writing unit tests
@@ -40,7 +40,7 @@
 * ## STAGE 6. Docker
     - [ ] Setting Docker
     > *Estimated time: 8 hours*  
-      *Factual time: 0 hours*
+      *Factual time: 2 hours*
 
 
 
