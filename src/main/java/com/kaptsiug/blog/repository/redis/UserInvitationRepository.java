@@ -10,4 +10,5 @@ public interface UserInvitationRepository extends CrudRepository<UserInvitation,
     UserInvitation findByInvitationCode(String hashCode);
 
     boolean existsByEmail(String email);
+
 }

@@ -1,5 +1,6 @@
 package com.kaptsiug.blog.controller;
 
+import com.kaptsiug.blog.dto.PasswordRestorer;
 import com.kaptsiug.blog.dto.UserEnter;
 import com.kaptsiug.blog.dto.UserForm;
 import com.kaptsiug.blog.service.RegistrationService;
@@ -9,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
@@ -34,5 +37,25 @@ public class AuthController {
         String enter = registrationService.enter(userEnter);
         return ResponseEntity.ok().body(enter);
     }
+
+    @PostMapping("/forgot_password")
+    @ResponseStatus(HttpStatus.OK)
+    public void restorePassword(@Valid @RequestBody PasswordRestorer passwordRestorer) {
+
+    }
+
+    @PostMapping("/reset")
+    @ResponseStatus(HttpStatus.OK)
+    public void resetPassword(@Valid @RequestBody PasswordRestorer passwordRestorer) {
+
+    }
+
+    @GetMapping("/check_code/${code}")
+    public String checkCode(@RequestParam String activationCode) {
+        return userService.checkCode(activationCode);
+    }
+
+
+
 
 }
