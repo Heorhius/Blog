@@ -29,13 +29,13 @@
 * ## STAGE 4. Mail sending
     - [x] Creating mail sending
     > *Estimated time: 10 hours*  
-      *Factual time: 6 hours*
+      *Factual time: 12 hours*
 
 * ## STAGE 5. Tests
     - [ ] Writing unit tests
     - [ ] Writing integration tests
     > *Estimated time: 14 hours*  
-      *Factual time: 0 hours*
+      *Factual time: 2 hours*
 
 * ## STAGE 6. Docker
     - [ ] Setting Docker
