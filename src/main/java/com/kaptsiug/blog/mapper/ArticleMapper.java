@@ -3,7 +3,6 @@ package com.kaptsiug.blog.mapper;
 import com.kaptsiug.blog.dto.Article;
 import com.kaptsiug.blog.entity.sql.ArticleEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;

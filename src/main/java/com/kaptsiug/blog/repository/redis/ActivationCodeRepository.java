@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ActivationCodeRepository extends CrudRepository<ActivationCodeEntity, String> {
-    ActivationCodeEntity findFirstByActivationCode(String code);
+
 }

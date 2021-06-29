@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,6 +21,8 @@ public class UserInvitation implements Serializable {
     private String firstName;
     private String lastName;
     private String password;
+    @Indexed
     private String email;
+    @Indexed
     private String invitationCode;
 }

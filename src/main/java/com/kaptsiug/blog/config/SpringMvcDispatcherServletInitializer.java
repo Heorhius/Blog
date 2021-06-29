@@ -7,12 +7,12 @@ public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationCon
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{PersistenceJPAConfig.class, RedisConfiguration.class,JavaMailConfig.class};
+        return new Class[]{PersistenceJPAConfig.class, RedisConfiguration.class, JavaMailConfig.class, JacksonConfiguration.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{SpringConfig.class,  SecurityConfig.class};
+        return new Class[]{SpringConfig.class, SecurityConfig.class};
     }
 
     @Override
@@ -20,21 +20,4 @@ public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationCon
         return new String[]{"/"};
     }
 
-
-//    @Override
-//    public void onStartup(ServletContext servletContext) throws ServletException {
-//        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-//        // регистрируем конфигурацию созданую высше
-//        ctx.register(SpringConfig.class);
-//        // добавляем в контекст слушателя с нашей конфигурацией
-//        servletContext.addListener(new ContextLoaderListener(ctx));
-//
-//        ctx.setServletContext(servletContext);
-//
-//        // настраиваем маппинг Dispatcher Servlet-а
-//        ServletRegistration.Dynamic servlet =
-//                servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(ctx));
-//        servlet.addMapping("/");
-//        servlet.setLoadOnStartup(1);
-//    }
 }

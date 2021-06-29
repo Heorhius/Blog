@@ -3,7 +3,6 @@ package com.kaptsiug.blog.mapper;
 import com.kaptsiug.blog.dto.UserForm;
 import com.kaptsiug.blog.entity.redis.UserInvitation;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")

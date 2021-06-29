@@ -4,7 +4,6 @@ import com.kaptsiug.blog.dto.Article;
 import com.kaptsiug.blog.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

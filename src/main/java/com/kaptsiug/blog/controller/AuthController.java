@@ -1,14 +1,11 @@
 package com.kaptsiug.blog.controller;
 
-import com.kaptsiug.blog.dto.PasswordRestorer;
-import com.kaptsiug.blog.dto.UserEnter;
-import com.kaptsiug.blog.dto.UserForm;
+import com.kaptsiug.blog.dto.*;
 import com.kaptsiug.blog.service.RegistrationService;
 import com.kaptsiug.blog.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -33,29 +30,24 @@ public class AuthController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<String> signIn(@RequestBody UserEnter userEnter) {
-        String enter = registrationService.enter(userEnter);
-        return ResponseEntity.ok().body(enter);
+    public ResponseEntity<Token> signIn(@RequestBody UserEnter userEnter) {
+        Token token = registrationService.enter(userEnter);
+        return ResponseEntity.ok().body(token);
     }
 
     @PostMapping("/forgot_password")
     @ResponseStatus(HttpStatus.OK)
     public void restorePassword(@Valid @RequestBody PasswordRestorer passwordRestorer) {
-
     }
 
     @PostMapping("/reset")
     @ResponseStatus(HttpStatus.OK)
     public void resetPassword(@Valid @RequestBody PasswordRestorer passwordRestorer) {
-
     }
 
     @GetMapping("/check_code/${code}")
-    public String checkCode(@RequestParam String activationCode) {
-        return userService.checkCode(activationCode);
+    public ResponseEntity<CheckCode> checkCode(@RequestParam String activationCode) {
+        return ResponseEntity.ok().body(userService.checkCode(activationCode));
     }
-
-
-
 
 }
